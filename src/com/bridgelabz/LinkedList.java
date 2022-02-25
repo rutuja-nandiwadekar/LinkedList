@@ -52,4 +52,24 @@ public class LinkedList {
 			}
 		}
 	}
+
+	public void addLast(Object data) {
+		// create new node
+		Node newNode = new Node(data);
+		// list is empty
+		if (head == null)
+			head = newNode;
+		// list has only one element
+		else if (head.ref == null)
+			head.ref = newNode;
+		// list has more than 1 elements
+		else {
+			Node temp = head;
+			// traverse up to null elements
+			while (temp.ref != null) {
+				temp = temp.ref;
+			}
+			temp.ref = newNode;
+		}
+	}
 }
