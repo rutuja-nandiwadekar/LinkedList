@@ -15,20 +15,25 @@ public class LinkedList {
 		}
 	}
 
+	/*
+	 * This is the method to add first
+	 */
 	public void addFirst(Object data) {
-		// 100 200 300
 		// create new node
-		Node newNode = new Node(data);// 400
+		Node newNode = new Node(data);
 		// list is empty
 		if (head == null)
 			head = newNode;
 		// list is not empty
 		else {
-			newNode.ref = head; // head==>400 100 200 300
+			newNode.ref = head;
 			head = newNode;
 		}
 	}
 
+	/*
+	 * This is the method to display
+	 */
 	public void display() {
 		// list is empty
 		if (head == null)
