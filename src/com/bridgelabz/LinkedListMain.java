@@ -1,6 +1,6 @@
 /*
- *Ability to delete the first element in the LinkedList of sequence 56->30->70
- *Final Sequence: 30->70
+ *Ability to delete the last element in the LinkedList of sequence 56->30->70
+ *Final Sequence: 56->30
  */
 package com.bridgelabz;
 
@@ -12,7 +12,7 @@ public class LinkedListMain {
 		list.addFirst(30);
 		list.addFirst(56);
 		list.display();
-		list.deleteFirst();
+		list.deleteLast();
 		list.display();
 	}
 }
