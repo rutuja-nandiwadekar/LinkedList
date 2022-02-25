@@ -16,7 +16,7 @@ public class LinkedList {
 	}
 
 	/*
-	 * This is the method to add first
+	 * This is the method to add first element
 	 */
 	public void addFirst(Object data) {
 		// create new node
@@ -32,7 +32,7 @@ public class LinkedList {
 	}
 
 	/*
-	 * This is the method to display
+	 * This is the method to display elements
 	 */
 	public void display() {
 		// list is empty
@@ -53,6 +53,9 @@ public class LinkedList {
 		}
 	}
 
+	/*
+	 * This is the method to add last element
+	 */
 	public void addLast(Object data) {
 		// create new node
 		Node newNode = new Node(data);
@@ -70,6 +73,20 @@ public class LinkedList {
 				temp = temp.ref;
 			}
 			temp.ref = newNode;
+		}
+	}
+
+	/*
+	 * This is the method to delete first element
+	 */
+	public void deleteFirst() {
+		// list is empty
+		if (head == null)
+			System.out.println("Nothing to delete..");
+		// list is not empty
+		else {
+			Node temp = head;
+			head = temp.ref;
 		}
 	}
 }
