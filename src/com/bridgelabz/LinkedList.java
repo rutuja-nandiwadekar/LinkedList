@@ -1,13 +1,16 @@
 package com.bridgelabz;
 
+import java.util.Scanner;
+
 public class LinkedList {
+	Scanner scanner = new Scanner(System.in);
 	Node head;
 
 	// node creation
 	public class Node {
 
 		Object data;
-		Node ref;
+		Node next;
 
 		// constructor
 		public Node(Object data) {
@@ -26,7 +29,7 @@ public class LinkedList {
 			head = newNode;
 		// list is not empty
 		else {
-			newNode.ref = head;
+			newNode.next = head;
 			head = newNode;
 		}
 	}
@@ -43,12 +46,12 @@ public class LinkedList {
 			Node temp = head;
 			// traverse up to null elements
 			while (temp != null) {
-				if (temp.ref != null)
+				if (temp.next != null)
 					System.out.print(temp.data + " => ");
 				else
 					// display data
 					System.out.println(temp.data);
-				temp = temp.ref;
+				temp = temp.next;
 			}
 		}
 	}
@@ -63,16 +66,16 @@ public class LinkedList {
 		if (head == null)
 			head = newNode;
 		// list has only one element
-		else if (head.ref == null)
-			head.ref = newNode;
+		else if (head.next == null)
+			head.next = newNode;
 		// list has more than 1 elements
 		else {
 			Node temp = head;
 			// traverse up to null elements
-			while (temp.ref != null) {
-				temp = temp.ref;
+			while (temp.next != null) {
+				temp = temp.next;
 			}
-			temp.ref = newNode;
+			temp.next = newNode;
 		}
 	}
 
@@ -86,7 +89,7 @@ public class LinkedList {
 		// list is not empty
 		else {
 			Node temp = head;
-			head = temp.ref;
+			head = temp.next;
 		}
 	}
 
@@ -98,16 +101,39 @@ public class LinkedList {
 		if (head == null)
 			System.out.println("No elements to delete");
 		// list has only one element
-		else if (head.ref == null)
+		else if (head.next == null)
 			head = null;
 		// list is not empty
 		else {
 			Node temp = head;
-			// traverse up to ref of next node is null
-			while (temp.ref.ref != null) {
-				temp = temp.ref;
+			// traverse up to next of next node is null
+			while (temp.next.next != null) {
+				temp = temp.next;
 			}
-			temp.ref = null;
+			temp.next = null;
+		}
+	}
+
+	/*
+	 * This is the method to add middle element
+	 */
+	public void addMiddle(Object data) {
+		// create new node
+		Node newNode = new Node(data);
+		// list is empty
+		if (head == null)
+			head = newNode;
+		// list has more than 1 elements
+		else {
+			Node temp = head;
+			System.out.println("Enter the data after which new data should be added");
+			Object data1 = scanner.nextInt();
+			// traverse up to data after which new data should be added
+			while (temp.data != data1) {
+				temp = temp.next;
+			}
+			newNode.next = temp.next;
+			temp.next = newNode;
 		}
 	}
 }
