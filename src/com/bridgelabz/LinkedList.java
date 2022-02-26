@@ -165,4 +165,43 @@ public class LinkedList {
 		else
 			System.out.println(data + " not found");
 	}
+
+	/*
+	 * This is the method to delete particular elements
+	 */
+	public void deleteElement(Object data) {
+		// list is empty
+		if (head == null)
+			System.out.println("Linked list is empty so cant delete");
+		// list has only one element
+		else if (head.data == data) {
+			head = null;
+		}
+		// list has more than 1 elements
+		else {
+			Node temp = head;
+			while (temp.next.data != data) {
+				temp = temp.next;
+			}
+			temp.next = temp.next.next;
+		}
+	}
+
+	/*
+	 * This is the method to calculate size of linked list
+	 */
+	public int getSize() {
+		int count = 0;
+
+		if (head == null)
+			return count;
+
+		Node temp = head;
+		while (temp != null) {
+			count++;
+			temp = temp.next;
+		}
+		System.out.println("Linked List size is = " + count);
+		return count;
+	}
 }
