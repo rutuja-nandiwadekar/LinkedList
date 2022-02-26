@@ -1,6 +1,5 @@
 /*
- *Ability to insert 30 between 56 and 70
- *Final Sequence: 56->30->70
+ *Ability to search LinkedList to find Node with value 30
  */
 package com.bridgelabz;
 
@@ -10,8 +9,8 @@ public class LinkedListMain {
 		LinkedList list = new LinkedList();
 		list.addFirst(70);
 		list.addFirst(56);
+		list.addFirst(30);
 		list.display();
-		list.addMiddle(30);
-		list.display();
+		list.search(30);
 	}
 }
